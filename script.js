@@ -8,7 +8,9 @@ const paymentType = document.getElementsByName("paymentType");
 
 document.getElementById("CalculateBtn").addEventListener("click",(e)=>{
         e.preventDefault();
-    let MortgagePayment; 
+    
+    let monthlyAmount; 
+    let totalAmount;
     if(Amount.value==""||Amount.value ==null){
             let parent = Amount.parentElement;
             if(Amount.value.trim().length ===0){
@@ -39,7 +41,27 @@ document.getElementById("CalculateBtn").addEventListener("click",(e)=>{
         ValidInput(InterestRate)
     }
     PaymentCheck()
-})
+    if (Amount.value && Year.value && InterestRate.value) {
+        let loanAmount = Amount.value;
+        let loanInterestrate = InterestRate.value;
+        let Repaymentyear = Year.value;
+    
+        // Convert annual interest rate to monthly and years to months
+        loanInterestrate = ((loanInterestrate / 100) / 12);
+        Repaymentyear = Repaymentyear * 12;
+    
+        // Correct formula for monthly payment calculation
+        monthlyAmount = loanAmount * loanInterestrate * Math.pow((1 + loanInterestrate), Repaymentyear) / 
+                        (Math.pow((1 + loanInterestrate), Repaymentyear) - 1);
+        
+        monthlyAmount = monthlyAmount.toFixed(2)
+        totalAmount = monthlyAmount * Repaymentyear;
+        totalAmount = totalAmount.toFixed(2);
+    }
+    console.log(monthlyAmount)
+    console.log(totalAmount)
+
+    })
 
 function InvalidInput(element){
     let parent = element.parentElement;
@@ -78,7 +100,6 @@ function PaymentCheck(){
             parent.nextElementSibling.classList.remove("errorMsg");
 
         }
-    radio.checked = false;
 
     })
 

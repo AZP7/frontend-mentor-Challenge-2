@@ -100,7 +100,6 @@ input{
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
 }
 .payment>label{
     border: 1px solid grey;
@@ -167,4 +166,87 @@ button, input, .payment>label, header h1{
 }
 .errorMsg{
     color: red;
+}
+@media (min-width:1000px){
+    .container{
+        width: 60%;
+        height: 70%;
+        flex-direction: row;
+        overflow-y: hidden;
+        border-radius:10px ;
+    }
+    .InputFiled{
+        width: 50%;
+        height: 100%;
+    }
+    .ResultField{
+        display: flex;
+        width: 50%;
+        height: 100%;
+        border-bottom-left-radius: 80px;
+    }
+    header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    header h1{
+        font-size: 1.2rem;
+        margin-bottom:5px;
+    }
+    header p{
+        font-size: .9rem;
+        margin-right: 20px;
+    }
+    form{
+        padding: 10px;
+        padding-left: 20px;
+    }
+    label{
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    input{
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+    .year p, .Amount p , .InterestRate p{
+        width: 30%;
+        height: 100%;
+        text-align: center;
+        font-size: 1rem;
+    }
+    .termAndrate{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        height: 50px;
+        margin-top: 10px;
+    }
+    .termAndrate>div{
+        width: 50%;
+    }
+    .termAndrate>div>div{
+        width: 95%;
+        height: 40px;
+    }
+    .termAndrate>div>div>input{
+        width: 70%;
+    }
+    .payment>label{
+        padding: 15px 20px;
+    }
+    button{
+        padding: 8px 15px;
+        font-size: .9rem;
+        width: 250px;
+    }
+    .msg{
+        font-size: .7rem;
+        margin-bottom: 10px;
+        height: 20px;
+    }
+    
+    
+
 }

@@ -16,7 +16,7 @@
           <div class="InputFiled">
               <header>
                   <h1>Mortgage Calculator</h1>
-                  <p>Clear All</p>
+                  <p id="clear">Clear All</p>
               </header>
               <form action="">
                     
@@ -25,27 +25,38 @@
                         <p>₤</p>
                         <input type="number" id="Amount">
                     </div>
-                    <p></p>
+                    <p class="msg"> </p>
 
-                    <label for="Year">Mortgage Term</label>
-                    <div class="year">
-                          <input type="number" id="Year">
-                          <p>Years</p>
+                    <div class="termAndrate">
+                            <div>
+                                  <label for="Year">Mortgage Term</label>
+                                  <div class="year">
+                                        <input type="number" id="Year">
+                                        <p>Years</p>
+                                  </div>
+                                  <p class="msg"></p>
+              
+                            </div>
+
+                            <div>
+                                  <label for="InterestRate">Interest Rate</label>
+                                  <div class="InterestRate">
+                                        <input type="number" id="InterestRate">
+                                        <p>%</p>
+                                  </div>  
+                                  <p class="msg"></p>
+              
+                            </div>
+
                     </div>
-                    <p></p>
 
-                    <label for="InterestRate">Interest Rate</label>
-                    <div class="InterestRate">
-                          <input type="number" id="InterestRate">
-                          <p>%</p>
-                    </div>  
-                    <p></p>
+
                     <label>Mortgage Type</label>
                     <div class="payment">
                         <label for="payment1"><input type="radio" id="payment1" name="paymentType">Repayment</label>
                         <label for="payment2"><input type="radio" id="payment2" name="paymentType">Interest Only</label>
                     </div>
-                    <p></p>
+                    <p class="msg"></p>
 
                     <button type="submit" id="CalculateBtn">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="#133041" d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"/></svg>
