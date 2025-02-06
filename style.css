@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial,sans-serif;
+    scroll-behavior: smooth;
+}
+:root{
+    --font-primary-color : rgb(14, 14, 73);
+}
+body{
+    background-color: rgb(195, 230, 241);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}   
+.InputFiled{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.ResultField{
+    background-color: rgb(26, 53, 94);
+
+}
+
+header{
+    width: 100%;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+header h1{
+    font-size: 1.4rem;
+    margin-bottom:10px;
+}
+header p{
+    font-size: .9rem;
+    text-decoration: underline;
+    cursor: pointer;
+    color: rgb(75, 75, 75);
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;    
+    color: rgb(75, 75, 75);
+    padding: 20px;
+}
+label{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: rgb(75, 75, 75);
+
+}
+input{
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    font-weight: 550;
+}
+.year, .Amount , .InterestRate{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(8, 8, 71);
+    border-radius: 5px;
+
+}
+.year input, .Amount input, .InterestRate input{
+    width: 85%;
+    border: none;
+}
+.year p, .Amount p , .InterestRate p{
+    width: 15%;
+    height: 100%;
+    background-color: rgb(198, 252, 252);
+    text-align: center;
+    padding-top: 10px;
+    font-weight: 550;
+    color: rgb(75, 75, 75);
+}
+.year p , .Amount input, .InterestRate p{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.Amount p, .year input ,.InterestRate input{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+}
+.payment{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.payment>label{
+    border: 1px solid grey;
+    padding: 15px 20px;
+    margin: 0;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.payment>label:first-child{
+    margin-bottom: 10px;
+}
+.payment>label input{
+    margin-right: 10px;
+}
+button{
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    background-color: rgb(201, 201, 23);
+}
+button:hover{
+    background-color: rgb(231, 231, 27);    
+
+}
+button svg{
+    margin-right: 20px;
+}
+button, input, .payment>label, header h1{
+    color: var(--font-primary-color);
+}
+
+.ResultField{
+    background-color: rgb(7, 7, 71);
+    height: 60vh;
+}
+.empty_state{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.result{
+    text-align: center;
+}
+.result h2{
+    color: #fff;
+    margin-bottom: 15px;
+}
+.result p{
+    color: rgb(182, 182, 182);
+}
+.errorInput{
+    border: 1px solid red !important;
+}
+.errorLabel{
+    background-color: red !important;
+    color: #fff !important;
+}
+.errorMsg{
+    color: red;
+}
