@@ -6,10 +6,10 @@
     scroll-behavior: smooth;
 }
 :root{
-    --font-primary-color : rgb(14, 14, 73);
+    --font-primary-color : rgb(31, 76, 102);
 }
 body{
-    background-color: rgb(195, 230, 241);
+    background-color: rgb(92, 137, 151);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -29,7 +29,7 @@ body{
     flex-direction: column;
 }
 .ResultField{
-    background-color: rgb(26, 53, 94);
+    background-color: rgb(33, 51, 77);
 
 }
 
@@ -138,8 +138,78 @@ button, input, .payment>label, header h1{
 }
 
 .ResultField{
-    background-color: rgb(7, 7, 71);
+    background-color: rgb(42, 67, 104);
     height: 60vh;
+}
+.resultDisplay{
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+.resultMsg{
+    width: 100%;
+    padding: 20px;
+}
+.resultMsg h2{
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+.resultMsg p{
+    display: block;
+    color: rgb(206, 206, 206);
+    font-weight: 550;
+    font-size: .9rem;
+}
+.repaymentAmount {
+    padding: 20px;
+    width: 80%;
+    height: 240px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: rgb(36, 47, 68);
+    position: relative;
+}
+.repaymentAmount::before {
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    background-color: greenyellow;
+    border-top-left-radius: 10px;
+    border-top-right-radius:10px ;
+
+    
+}
+.repaymentAmount>div:first-child{
+    height: 60%;
+}
+.repaymentAmount>div:first-child p:first-child{
+    margin-bottom: 20px;
+    color: rgb(187, 187, 187);
+    font-weight: 500;
+}
+.repaymentAmount>div:first-child p:last-child{
+    color: greenyellow;
+    font-size: 2.5rem;
+    font-weight: 550;
+    position: relative;
+    border-bottom: 1px solid #636262;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.repaymentAmount>div:last-child p:first-child{
+    color: rgb(187, 187, 187);
+    margin-bottom: 10px;
+
+}
+.repaymentAmount>div:last-child p:last-child{
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 .empty_state{
     display: flex;
@@ -167,10 +237,31 @@ button, input, .payment>label, header h1{
 .errorMsg{
     color: red;
 }
+.termAndrate{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 150px;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.termAndrate>div{
+    width: 100%;
+    /* margin-bottom: 10px; */
+}
+.termAndrate>div>div>p{
+    height: 42px;
+}
+.msg{
+    margin-bottom: 10px;
+    height: 10px;
+}
 @media (min-width:1000px){
     .container{
-        width: 60%;
-        height: 70%;
+        width: 90%;
+        height: 85%;
         flex-direction: row;
         overflow-y: hidden;
         border-radius:10px ;
@@ -220,11 +311,17 @@ button, input, .payment>label, header h1{
         display: flex;
         width: 100%;
         align-items: center;
-        height: 50px;
+        height: 70px;
+        flex-direction: row;
         margin-top: 10px;
     }
     .termAndrate>div{
         width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    .termAndrate>div>label{
+        margin-bottom: 10px;
     }
     .termAndrate>div>div{
         width: 95%;
@@ -232,6 +329,9 @@ button, input, .payment>label, header h1{
     }
     .termAndrate>div>div>input{
         width: 70%;
+    }
+    .termAndrate>div>div>p{
+        height: 100%;
     }
     .payment>label{
         padding: 15px 20px;
@@ -250,3 +350,18 @@ button, input, .payment>label, header h1{
     
 
 }
+@media(min-width:1100px){
+    .container{
+        width: 80%;
+        height: 75%;
+    }
+}
+
+@media(min-width:1200px){
+    .container{
+        width: 70%;
+        height: 75%;
+    }
+
+}
+

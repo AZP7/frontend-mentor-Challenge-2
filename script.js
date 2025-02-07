@@ -20,24 +20,23 @@ document.getElementById("CalculateBtn").addEventListener("click",(e)=>{
                 parent.nextElementSibling.classList.add("errorMsg")
             }
     }
-    else{
+    else if(Amount.value>0){
             let parent = Amount.parentElement;
             Amount.parentElement.classList.remove("errorInput");
             Amount.previousElementSibling.classList.remove("errorLabel");
             parent.nextElementSibling.textContent ="";
             parent.nextElementSibling.classList.remove("errorMsg")        
-
     }
     if(Year.value ==""||Year.value ==null){
         InvalidInput(Year)
     }
-    else{
+    else if(Year.value >0){
         ValidInput(Year)
     }
     if(InterestRate.value==""|| InterestRate.value==null){
         InvalidInput(InterestRate)
     }
-    else{
+    else if(InterestRate.value>0) {
         ValidInput(InterestRate)
     }
     PaymentCheck()
@@ -57,11 +56,17 @@ document.getElementById("CalculateBtn").addEventListener("click",(e)=>{
         monthlyAmount = monthlyAmount.toFixed(2)
         totalAmount = monthlyAmount * Repaymentyear;
         totalAmount = totalAmount.toFixed(2);
+        document.querySelector(".empty_state").style.display = "none";
+        document.querySelector(".resultDisplay").style.display = "flex";
+        document.getElementById("payMonth").textContent = `₤ ${monthlyAmount}`;
+        document.getElementById("payTotal").textContent = `₤ ${totalAmount}`;
     }
-    console.log(monthlyAmount)
-    console.log(totalAmount)
-
     })
+
+document.getElementById("clear").addEventListener("click",(e)=>{
+    e.preventDefault;
+    document.getElementById("myForm").reset();
+})
 
 function InvalidInput(element){
     let parent = element.parentElement;
@@ -80,27 +85,30 @@ function ValidInput(element){
     element.nextElementSibling.classList.remove("errorLabel");
     
 }
-function PaymentCheck(){
-    let isSelect = false;
-    paymentType.forEach((radio)=>{ 
-        if(!radio.checked){
-            let parent = document.querySelector(".payment");
-            Array.from(parent.children).forEach((child)=>{
-                child.classList.add("errorInput")
-            })
-            parent.nextElementSibling.innerHTML = "This field is required!";
-            parent.nextElementSibling.classList.add("errorMsg");
-        }
-        else if(radio.checked){
-            let parent = document.querySelector(".payment");
-            Array.from(parent.children).forEach((child)=>{
-                child.classList.remove("errorInput")
-            })
-            parent.nextElementSibling.innerHTML = "";
-            parent.nextElementSibling.classList.remove("errorMsg");
-
-        }
-
-    })
-
-}
+function PaymentCheck() {
+    let isPaymentSelected = false;
+    const parent = document.querySelector(".payment");
+    const errorElement = parent.nextElementSibling;
+  
+    // Check if at least one radio is selected
+    paymentType.forEach((radio) => {
+      if (radio.checked) {
+        isPaymentSelected = true;
+      }
+    });
+  
+    // Apply error state if no selection
+    if (!isPaymentSelected) {
+      Array.from(parent.children).forEach((child) => {
+        child.classList.add("errorInput");
+      });
+      errorElement.innerHTML = "This field is required!";
+      errorElement.classList.add("errorMsg");
+    } else {
+      Array.from(parent.children).forEach((child) => {
+        child.classList.remove("errorInput");
+      });
+      errorElement.innerHTML = "";
+      errorElement.classList.remove("errorMsg");
+    }
+  }
